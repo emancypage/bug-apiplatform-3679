@@ -26,7 +26,7 @@ class Pack
     private $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Product::class, inversedBy="packs", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity=Product::class, inversedBy="packs", cascade={"persist", "refresh"}, fetch="EAGER")
      * @Groups({"pack:read", "pack:write"})
      */
     private $products;
